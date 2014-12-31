@@ -1,7 +1,7 @@
 package com.sibisoft.ttd.training;
 /*
  * By Nazia Khairani
- * Chapter # 13
+ * Chapter # 14
  * Dated 31st December 2014
  */
 public class Franc extends Money{
