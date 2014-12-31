@@ -1,12 +1,22 @@
 package com.sibisoft.ttd.training;
 /*
  * By Nazia Khairani
- * Chapter # 07
+ * Chapter # 08
  * Dated 31st December 2014
  */
-public class Money {
+public abstract class Money {
 
+	abstract Money times(int multiplier); //make the times method abstract
+	
 	protected int amount;
+	
+	static Money dollar(int amount) {
+		return new Dollar(amount);
+	}
+	
+	static Money franc(int amount) {
+		return new Franc(amount);
+	}
 	
 	//check if both amounts and classes are equal
 	public boolean equals(Object object) { 
