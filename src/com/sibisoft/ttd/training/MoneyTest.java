@@ -1,7 +1,7 @@
 package com.sibisoft.ttd.training;
 /*
  * By Nazia Khairani
- * Chapter # 09
+ * Chapter # 10
  * Dated 31st December 2014
  */
 import static org.junit.Assert.*;
@@ -11,10 +11,18 @@ import org.junit.Test;
 public class MoneyTest {
 
 	@Test
+	public void testDifferentClassEquality() {
+		assertTrue(new Money(10, "CHF").equals(new Franc(10, "CHF")));
+	}
+	
+	
+	
+	
+	/*@Test
 	public void testCurrency() { // test currency of dollar and franc
 		assertEquals("USD", Money.dollar(1).currency());
 		assertEquals("CHF", Money.franc(1).currency());
-	}
+	}*/
 	
 	/*@Test
 	public void testMultiplicationForDollar() { //multiplication for dollar
