@@ -1,12 +1,12 @@
 package com.sibisoft.ttd.training;
 /*
  * By Nazia Khairani
- * Chapter # 05
+ * Chapter # 06
  * Dated 30th December 2014
  */
-public class Franc {
+public class Franc extends Money{
 
-	private int amount;
+	//private int amount;  //now we dont need to declare amout field as it defined in Money class as protected and we see in a subclass too
 	
 	Franc(int amount){
 		this.amount= amount;
@@ -16,8 +16,9 @@ public class Franc {
 		return new Franc(amount * multiplier);
 	}
 	
-	public boolean equals(Object object) {
-		Franc franc= (Franc) object;
-		return amount == franc.amount;
-	}
+	//also no need to call this from here..Now we call this method from base class Money
+	/*public boolean equals(Object object) {
+		Money money= (Money) object;
+		return amount == money.amount;
+	}*/
 }
