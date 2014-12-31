@@ -1,7 +1,7 @@
 package com.sibisoft.ttd.training;
 /*
  * By Nazia Khairani
- * Chapter # 10
+ * Chapter # 11
  * Dated 31st December 2014
  */
 public class Money {
@@ -18,13 +18,13 @@ public class Money {
 		this.currency = currency;
 	}
 	
-	/*static Money dollar(int amount) {
+	static Money dollar(int amount) {
 		return new Dollar(amount, "USD");
 	}
 	
 	static Money franc(int amount) {
 		return new Franc(amount, "CHF");
-	}*/
+	}
 	
 	//returning money instead of dollar and franc individually
 	Money times(int multiplier) {

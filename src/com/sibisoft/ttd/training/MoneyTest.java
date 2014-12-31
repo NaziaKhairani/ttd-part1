@@ -1,7 +1,7 @@
 package com.sibisoft.ttd.training;
 /*
  * By Nazia Khairani
- * Chapter # 10
+ * Chapter # 11
  * Dated 31st December 2014
  */
 import static org.junit.Assert.*;
@@ -15,7 +15,12 @@ public class MoneyTest {
 		assertTrue(new Money(10, "CHF").equals(new Franc(10, "CHF")));
 	}
 	
-	
+	@Test
+	public void testEquality() { //check equality cases for dollar and franc
+		assertTrue(Money.dollar(5).equals(Money.dollar(5)));
+		assertFalse(Money.dollar(5).equals(Money.dollar(6)));
+		assertFalse(Money.franc(5).equals(Money.dollar(5)));
+	}
 	
 	
 	/*@Test
@@ -38,13 +43,6 @@ public class MoneyTest {
 		assertEquals(Money.franc(15), five.times(3));
 	}
 	
-	@Test
-	public void testEquality() { //check equality cases for dollar and franc
-		assertTrue(Money.dollar(5).equals(Money.dollar(5)));
-		assertFalse(Money.dollar(5).equals(Money.dollar(6)));
-		assertTrue(Money.franc(5).equals(Money.franc(5)));
-		assertFalse(Money.franc(5).equals(Money.franc(6)));
-		assertFalse(Money.franc(5).equals(Money.dollar(5)));
-	}*/
+	*/
 	
 }
