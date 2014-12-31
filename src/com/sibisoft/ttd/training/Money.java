@@ -1,14 +1,11 @@
 package com.sibisoft.ttd.training;
 /*
  * By Nazia Khairani
- * Chapter # 11
+ * Chapter # 12
  * Dated 31st December 2014
  */
-public class Money {
+public class Money implements Expression{
 
-	//abstract Money times(int multiplier); //make the times method abstract
-	//abstract String currency();
-	
 	protected int amount;
 	protected String currency;
 	
@@ -26,6 +23,10 @@ public class Money {
 		return new Franc(amount, "CHF");
 	}
 	
+	Expression plus(Money addend) {
+		return new Money(amount + addend.amount, currency);
+	}
+	
 	//returning money instead of dollar and franc individually
 	Money times(int multiplier) {
 		return new Money(amount * multiplier, currency);
@@ -40,17 +41,11 @@ public class Money {
 		return amount + " " + currency;
 	}
 	
-	//check if both amounts and classes are equal
-	/*public boolean equals(Object object) {
-		Money money = (Money) object;
-		return amount == money.amount
-		&& getClass().equals(money.getClass());
-	}*/
-	
 	//compare currencies
 	public boolean equals(Object object) {
 		Money money = (Money) object;
 		return amount == money.amount
 		&& currency().equals(money.currency());
 	}
+	
 }
