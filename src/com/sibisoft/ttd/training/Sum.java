@@ -1,8 +1,8 @@
 package com.sibisoft.ttd.training;
 /*
  * By Nazia Khairani
- * Chapter # 15
- * Dated 31st December 2014
+ * Chapter # 16
+ * Dated 1st January 2015
  */
 public class Sum implements Expression{
 
@@ -20,7 +20,15 @@ public class Sum implements Expression{
 		return new Money(amount, to);
 	}
 	
-	public Expression plus(Expression addend) {
+	/*public Expression plus(Expression addend) {
 		return null;
+	}*/
+	
+	public Expression plus(Expression addend) {
+		return new Sum(this, addend);
+	}
+	
+	public Expression times(int multiplier) {
+		return new Sum(augend.times(multiplier),addend.times(multiplier));
 	}
 }

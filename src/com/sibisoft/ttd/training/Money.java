@@ -1,8 +1,8 @@
 package com.sibisoft.ttd.training;
 /*
  * By Nazia Khairani
- * Chapter # 15
- * Dated 31st December 2014
+ * Chapter # 16
+ * Dated 1st January 2015
  */
 public class Money implements Expression{
 
@@ -23,7 +23,7 @@ public class Money implements Expression{
 		return new Franc(amount, "CHF");
 	}
 	
-	Expression times(int multiplier) {
+	public Expression times(int multiplier) {
 		return new Money(amount * multiplier, currency);
 	}
 	
@@ -31,7 +31,7 @@ public class Money implements Expression{
 		int rate = bank.rate(currency, to);
 		return new Money(amount / rate, to);
 	}
-		
+	
 	public Expression plus(Expression addend) {
 		return new Sum(this, addend);
 	}
