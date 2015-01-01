@@ -1,7 +1,7 @@
 package com.sibisoft.ttd.training;
 /*
  * By Nazia Khairani
- * Chapter # 14
+ * Chapter # 15
  * Dated 31st December 2014
  */
 public class Money implements Expression{
@@ -23,26 +23,17 @@ public class Money implements Expression{
 		return new Franc(amount, "CHF");
 	}
 	
-	/*Expression plus(Money addend) {
-		return new Money(amount + addend.amount, currency);
-	}*/
-	
-	Expression plus(Money addend) {
-		return new Sum(this, addend);
+	Expression times(int multiplier) {
+		return new Money(amount * multiplier, currency);
 	}
-	
-	/*public Money reduce(String to) {
-		return this;
-	}*/
 	
 	public Money reduce(Bank bank, String to) {
 		int rate = bank.rate(currency, to);
 		return new Money(amount / rate, to);
 	}
-	
-	
-	Money times(int multiplier) {
-		return new Money(amount * multiplier, currency);
+		
+	public Expression plus(Expression addend) {
+		return new Sum(this, addend);
 	}
 	
 	String currency() {
